@@ -1,0 +1,124 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9FE92148-B19C-4B42-AA67-1426240E0FB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gekkota</RootNamespace>
+    <AssemblyName>Gekkota</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Gekkota.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0659,0661,1701;1702</NoWarn>
+    <DocumentationFile>Gekkota.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>0659,0661,1701;1702</NoWarn>
+    <DocumentationFile>Gekkota.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.2.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compression\CompressionException.cs" />
+    <Compile Include="Compression\CompressionLevel.cs" />
+    <Compile Include="Net\Sockets\XudpClient.cs" />
+    <Compile Include="Security\Cryptography\ChangeKeyEventArgs.cs" />
+    <Compile Include="Security\Cryptography\ChangeKeyEventHandler.cs" />
+    <Compile Include="Security\Cryptography\CryptoService.cs" />
+    <Compile Include="Security\Cryptography\CryptoServiceProvider.cs" />
+    <Compile Include="Tests\ChecksumGeneratorTest.cs" />
+    <Compile Include="Compression\ICompressionAlgorithm.cs" />
+    <Compile Include="Compression\LZF.cs" />
+    <Compile Include="Checksums\Crc16.cs" />
+    <Compile Include="Checksums\Crc32.cs" />
+    <Compile Include="Checksums\Ccitt.cs" />
+    <Compile Include="Checksums\ChecksumGenerator.cs" />
+    <Compile Include="Checksums\Xmodem.cs" />
+    <Compile Include="Checksums\IChecksumModel.cs" />
+    <Compile Include="Net\Sockets\Bandwidth.cs" />
+    <Compile Include="Net\Sockets\BandwidthManager.cs" />
+    <Compile Include="Net\Sockets\DatagramPriority.cs" />
+    <Compile Include="Net\Sockets\ExceptionEventArgs.cs" />
+    <Compile Include="Net\Sockets\ExceptionEventHandler.cs" />
+    <Compile Include="Net\Sockets\IPClient.cs" />
+    <Compile Include="Net\Sockets\NetPackage.cs" />
+    <Compile Include="Net\Sockets\ReceiveEventArgs.cs" />
+    <Compile Include="Net\Sockets\ReceiveEventHandler.cs" />
+    <Compile Include="Tests\IPClientTest.cs" />
+    <Compile Include="Tests\UdpClientTest.cs" />
+    <Compile Include="Tests\XudpClientTest.cs" />
+    <Compile Include="Net\Sockets\UdpClient.cs" />
+    <Compile Include="Net\Sockets\XudpFlag.cs" />
+    <Compile Include="Net\Sockets\XudpHeader.cs" />
+    <Compile Include="Net\Sockets\XudpMessageType.cs" />
+    <Compile Include="Net\Sockets\XudpNackMessage.cs" />
+    <Compile Include="Net\Sockets\XudpNackRequestMessage.cs" />
+    <Compile Include="Net\Sockets\XudpSyncMessage.cs" />
+    <Compile Include="Net\Datagram.cs" />
+    <Compile Include="Net\Field.cs" />
+    <Compile Include="Net\FieldCategory.cs" />
+    <Compile Include="Net\FieldEnumerator.cs" />
+    <Compile Include="Net\FieldHeader.cs" />
+    <Compile Include="Net\FieldSerializer.cs" />
+    <Compile Include="Net\FieldType.cs" />
+    <Compile Include="Net\Metafield.cs" />
+    <Compile Include="Net\PrimitiveValue.cs" />
+    <Compile Include="Net\ProtocolFieldAttribute.cs" />
+    <Compile Include="Tests\DatagramTest.cs" />
+    <Compile Include="Tests\FieldSerializerTest.cs" />
+    <Compile Include="Tests\FieldTest.cs" />
+    <Compile Include="Tests\MetafieldTest.cs" />
+    <Compile Include="Tests\ProtocolFieldAttributeTest.cs" />
+    <Compile Include="Tests\CryptoServiceProviderTest.cs" />
+    <Compile Include="Utilities\BoundsChecker.cs" />
+    <Compile Include="Utilities\Buffer.cs" />
+    <Compile Include="CasingRule.cs" />
+    <Compile Include="HashCodeGenerator.cs" />
+    <Compile Include="Collections\LinkedList.cs" />
+    <Compile Include="Collections\NodeEnumerator.cs" />
+    <Compile Include="Collections\Queue.cs" />
+    <Compile Include="Tests\HashCodeGeneratorTest.cs" />
+    <Compile Include="Tests\LinkedListTest.cs" />
+    <Compile Include="Tests\QueueTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Gekkota.pfx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
